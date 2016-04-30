@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+echo
 <head>
 
     <meta charset="utf-8">
@@ -89,9 +89,12 @@ session_start();
                         <a href="Offers.php">Offers</a>
                     </li>
                     <li>
-                        <a href="Gallery.html">Galleries</a>
+                        <a href="Gallery.php">Galleries</a>
                     </li>
+<<<<<<< HEAD
 l
+=======
+>>>>>>> refs/remotes/origin/master
 
                 </ul>
             </div>
