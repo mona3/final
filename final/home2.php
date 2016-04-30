@@ -86,7 +86,7 @@ session_start();
                         <a href="#">Posts</a>
                     </li>
                     <li>
-                        <a href="Offers.phح">Offers</a>
+                        <a href="Offers.php">Offers</a>
                     </li>
                     <li>
                         <a href="Gallery.html">Galleries</a>
