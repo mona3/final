@@ -91,10 +91,6 @@ session_start();
                     <li>
                         <a href="Gallery.php">Galleries</a>
                     </li>
-<<<<<<< HEAD
-l
-=======
->>>>>>> refs/remotes/origin/master
 
                 </ul>
             </div>
