@@ -92,7 +92,6 @@ session_start();
                         <a href="Gallery.php">Galleries</a>
                     </li>
 
-kk
                 </ul>
             </div>
 
