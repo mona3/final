@@ -91,7 +91,7 @@ session_start();
                     <li>
                         <a href="Gallery.html">Galleries</a>
                     </li>
-
+l
 
                 </ul>
             </div>
