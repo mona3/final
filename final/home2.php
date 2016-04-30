@@ -80,13 +80,13 @@ session_start();
                     </li>
 
                     <li>
-                        <a href="Acc_Inf.html">About</a>
+                        <a href="Acc_Inf.php">About</a>
                     </li>
                     <li>
                         <a href="#">Posts</a>
                     </li>
                     <li>
-                        <a href="Offers.php">Offers</a>
+                        <a href="Offers.phح">Offers</a>
                     </li>
                     <li>
                         <a href="Gallery.html">Galleries</a>
