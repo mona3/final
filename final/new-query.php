@@ -89,9 +89,19 @@ class Account extends  foo
 	}
 }
 	
+	
   
 }
 
+public function Get_Id($name)
+	{
+		    
+            $sql ="SELECT Id FROM Account WHERE UserName='".$name."'";
+            $result = mysqli_query($this->conn,$sql);
+			$row=mysqli_fetch_assoc($result);
+	        return $row["Id"];
+
+	}
 
 
 
@@ -311,4 +321,15 @@ class Gallary extends  foo
 {}
 class Pipes extends  foo
 {}
+
+class Order extends  foo
+{
+	  public function Get_Product_Id($ID)
+	{
+            $sql = "SELECT Product_Id FROM orders where Account_Id='".$ID."'";
+            $result= mysqli_query($this->conn, $sql);
+			return $result;
+	}
+
+}
 ?>

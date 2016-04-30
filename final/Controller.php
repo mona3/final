@@ -9,6 +9,8 @@ class controller
 	private $Offer;
 	private $Gallary;
 	private $Pipes;
+	private $Order;
+	
 	public function __construct()
 	{  
 		$this->Account=new Account();
@@ -16,6 +18,7 @@ class controller
 		$this->Product=new Product();
 		$this->Offer=new Offer();
 		$this->Pipes=new Pipes();
+		$this->Order=new Order();
 		
 	}
 	public function get_UserName()
@@ -501,6 +504,24 @@ if(isset($_FILES['image']))
 		   return $result ;
 		   
 	   }
+	   
+	   public function View_Order()
+	{
+	
+		$result1 = $this->Account->Get_Id("mo");
+		$result2 = $this->Order->Get_Product_Id($result1 );
+		return $result2  ;
+   
+	}
+	
+	public function Get_Product_info($Id)
+	{
+		$result1 = $this->Product->Get_Product_info($Id);
+		 $row = mysqli_fetch_assoc($result1);
+			 return $row ;
+            
+	}
+
 	}
 	
 	

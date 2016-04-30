@@ -45,7 +45,11 @@
 </head>
 
 <body>
-
+<?php 
+include("Controller.php");
+$controller=new controller();
+session_start();
+?>
 
 
 
@@ -136,44 +140,32 @@
             </div>
 
             <div class="row">
-
+<?php
+    
+    $result=$controller->View_Order();
+     if (mysqli_num_rows($result) > 0) 
+     {
+    // output data of each row
+    while($row1 = mysqli_fetch_assoc($result))
+ 
+         { $row=$controller->Get_Product_info($row1["Product_Id"]);
+			 ?>
+              
                 <div class="col-sm-4 col-lg-4 col-md-4">
                     <div class="thumbnail">
-                        <!--  <img src="http://placehold.it/320x150" alt="">-->
-                        <img src="rsz_15.jpg" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$24.99</h4>
-                            <h4>
-                                <a href="Product_1.html">First Product</a>
-                            </h4>
-                            <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">15 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                            </p>
-                        </div>
-                        <div>
-                            <button type="submit" class="btn btn-primary">Delete</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="rsz_d.jpg" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$64.99</h4>
-                            <h4>
-                                <a href="Product_2.html">Second Product</a>
-                            </h4>
-                            <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
+                       
+                              <div  style="height: 250px">
+								   <?php  echo '<img src="upload/'.$row["img"].'.jpg"  style="width: 100%;max-height: 100%" height="200"/>';?>
+								  </div>  
+                                    <div class="caption">
+                                        <h4 class="pull-right"><?php echo "$" .$row["Price"]; ?></h4>
+										<h4> <a href="Product_1.php?content=<?php echo $row["Name"];?>"><?php echo $row["Name"];?></a></h4>
+                                  
+										<p><?php echo "quantity:  ".$row["Num"]; ?></p>
+										<p><?php echo "Type:  ".$row["P_Type"]; ?></p>
+										<p><?php echo "Country:  ".$row["Country"];?></p>
+										
+                                    </div>
                         <div class="ratings">
                             <p class="pull-right">12 reviews</p>
                             <p>
@@ -202,7 +194,15 @@
                        
 </div>
                 </div>
+<?php						
+      }
+    } 
 
+    else 
+    {
+      echo "0 results";
+    }
+ ?>         
 
 
                 <!-- <div class="col-md-3">
